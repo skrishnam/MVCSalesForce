@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Salesforce Accounts";
+}
+
+<h2>Sales Force Accounts List</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>&nbsp;</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Main Contacts</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Display each entry in a row -->
+            @foreach (var item in ViewData["AccountList"] as IEnumerable<MVCSalesForce.Models.Account>)
+            {
+                <tr>
+                    <td>
+                        <a href="/Home/SingleAccount?acctId=@item.Id&editFlag=1">
+                            <img alt="update" src="@Url.Content("~/Content/Images/edit-button.jpg")"
+                                 style="height: 16px; width: 16px;" />
+                        </a>&nbsp;&nbsp; <a href="/Home/SingleAccount?acctId=@item.Id&editFlag=2">
+                            <img src="@Url.Content("~/Content/Images/delete-button.png")" style="height: 16px; width: 16px;"
+                                 alt="Delete" />
+                        </a>
+                    </td>
+                    <td><a href="/Home/SingleAccount?acctId=@item.Id&editFlag=0">@item.Name</a></td>
+                    <td>@item.Type</td>
+                    
+                    <td>
+                        @if (item.Contacts != null)
+                        {
+                            foreach (var contacts in item.Contacts)
+                            { 
+                            <div >
+                                <a href="/Home/AcctContact?contactId=@contacts.Id">@contacts.LastName</a>
+                            </div>
+                            <a href="/Home/AcctNewContact?acctId=@item.Id">
+                                <img alt="create"
+                                 src="@Url.Content("~/Content/Images/add.jpg")" style="height: 16px; width: 16px;" />
+                            </a>
+                            }
+                        }
+                    </td>
+
+                </tr>
+            }
+    </tbody>
+</table>
+

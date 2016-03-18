@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "AcctContact";
+}
+
+<h2>Contact Details</h2>
+
+
+<table class="table table-striped">
+    <tbody>
+        @foreach (var item in ViewData["ContactList"] as IEnumerable<MVCSalesForce.Models.Contact>)
+        {
+            <tr>
+                <td>
+                    Contact Id
+                </td>
+                <td>
+                    @item.Id
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    First Name
+                </td>
+                <td>
+                    @item.FirstName
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Last Name
+                </td>
+                <td>
+                    @item.LastName
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Department
+                </td>
+                <td>
+                    @item.Department
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Email
+                </td>
+                <td>
+                    @item.Email
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+

@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "SingleAccount";
+}
+
+
+<h2>Account Details</h2>
+
+<table class="table table-striped">
+    <tbody>
+        @foreach (var item in ViewData["AccountList"] as IEnumerable<MVCSalesForce.Models.Account>)
+        {
+            <tr>
+                <td>
+                   Account Id
+                </td>
+                <td>
+                    @item.Id
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Name
+                </td>
+                <td>
+                    @item.Name
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Type
+                </td>
+                <td>
+                    @item.Type
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Description
+                </td>
+                <td>
+                    @item.Description
+                </td>
+            </tr>
+    }
+    </tbody>
+</table>

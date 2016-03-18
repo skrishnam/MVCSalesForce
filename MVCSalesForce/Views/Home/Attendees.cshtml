@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Attendees";
+}
+
+<h2>Attendee List</h2>
+
+
+@foreach (var item in ViewData["AttendeeList"] as IEnumerable<MVCSalesForce.Models.Attendees>)
+{
+    <p>
+        @item.getId();
+        @item.getFirstName();
+        @item.getLastName();
+
+    </p>
+}
+
+
+
+

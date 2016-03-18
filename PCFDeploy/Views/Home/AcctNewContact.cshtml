@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "AcctNewContact";
+}
+
+<h2>New Contact</h2>
+
+
+    <form>
+        Salutation:<br>
+        <input type="text" name="salutation"><br>
+        First Name:<br>
+        <input type="text" name="firstName"><br><br>
+        Last Name:<br>
+        <input type="text" name="lastName"><br><br>
+        Title:<br>
+        <input type="text" name="title"><br><br>
+        Department:<br>
+        <input type="text" name="department"><br><br>
+        Phone:<br>
+        <input type="text" name="phone"><br><br>
+        Mobile Phone:<br>
+        <input type="text" name="mobilePhone"><br><br>
+        Email:<br>
+        <input type="text" name="email"><br><br>
+        Account Id:<br>
+        <input type="text" name="acctId" value=@ViewData["AccountId"]><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+
+
