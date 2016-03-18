@@ -41,7 +41,7 @@ namespace MVCSalesForce.Models
 
             string jsonFullString = "{\"AcctList\":" + jsonStr.Result + "}";
 
-            //Console.WriteLine("Inside Model getAccounts JSON FULL STRING Result:" + jsonFullString + ":");
+            Console.WriteLine("Inside Model getAccounts JSON FULL STRING Result:" + jsonFullString + ":");
 
             accountsList = JsonConvert.DeserializeObject<AccountList>(jsonFullString).AcctList;
 
