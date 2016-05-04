@@ -17,7 +17,8 @@ namespace MVCSalesForce.Models
 {
     public class BusinessDelegate
     {
-        private string baseUrlAddress = "https://sfdcapigateway-sada.cfapps.pez.pivotal.io/";
+//      private string baseUrlAddress = "https://sfdcapigateway-sada.cfapps.pez.pivotal.io/";
+        private string baseUrlAddress = ConfigurationManager.AppSettings["ApiGatewayUrl"].ToString();
 
         public List<Account> accountsList = new System.Collections.Generic.List<Account>();
         public List<Contact> contactList = new System.Collections.Generic.List<Contact>();
@@ -44,7 +45,6 @@ namespace MVCSalesForce.Models
             Console.WriteLine("Inside Model getAccounts JSON FULL STRING Result:" + jsonFullString + ":");
 
             accountsList = JsonConvert.DeserializeObject<AccountList>(jsonFullString).AcctList;
-
 
             // string testJsonStr = "{\"AcctList\":[{\"numberOfEmployees\":null,\"Id\":\"00161000002q4UZAAY\",\"Name\":\"GenePoint\",\"Type\":\"Customer - Channel\",\"Description\":null,\"Industry\":null,\"Ownership\":null,\"Website\":null,\"Phone\":null,\"NumberOfEmployees\":null,\"Opportunities\":null,\"Contacts\":[{\"Id\":\"00361000002DjgXAAS\",\"Email\":null,\"Name\":null,\"Title\":null,\"Department\":null,\"Salutation\":null,\"Phone\":null,\"MobilePhone\":null,\"FirstName\":null,\"LastName\":\"Frank\",\"AccountId\":null,\"Account\":null}]}]}";
             // Console.WriteLine("Inside Model getAccounts TEST JSON STRING:" + testJsonStr + ":");
